@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body class="py-2 px-5">
+  <input type="number" name="" id="input">
+  <button onclick="count()" class="btn btn-primary">Load</button>
+  <div id="display"></div>
+
+
+  <script>
+    const count = () => {
+      let userInput = document.getElementById('input').value;
+      let displayArea = document.getElementById('display')
+
+      for (let i = 1; i <= userInput; i++) {
+        // let show = i;
+        // console.log(i);
+        if (i % 3 == 0 && i % 5 == 0) {
+          displayArea.innerHTML += `<p class="text-success">${i} fizz buzz</p>`
+        }else if(i % 3 == 0){
+          displayArea.innerHTML += `<p class="text-primary">${i} fizz</p>`
+        }else if(i % 5 == 0){
+          displayArea.innerHTML += `<p>${i} buzz</p>`
+        }
+          }
+            }
+
+
+  </script>
+</body>
+
+</html>
