@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <input type="number" name="" id="count">
+  <button onclick="startCount()">Start Count</button>
+  <button onclick="pauseCount()">Stop Count</button>
+
+  <a href="index.html" class="btn btn-success">Go to Timer</a>
+
+
+  <script>
+    let interval;
+    const startCount = () => {
+      let userCount = document.getElementById('count')
+      if (!interval) {
+        interval = setInterval(() => {
+          userCount.value = parseFloat(userCount.value) - 1
+
+        }, 1000);
+
+      }
+    }
+
+    const pauseCount = () => {
+      clearInterval(interval)
+      interval = null
+    }
+  </script>
+</body>
+
+</html>
+<!-- countdown userInput to 0 -->
